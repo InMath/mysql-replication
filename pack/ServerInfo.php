@@ -32,7 +32,7 @@ class ServerInfo {
         }
 
         //connection_id 4 bytes
-        self::$INFO['connection_id'] = $pack[$i]. $pack[++$i] . $pack[++$i] . $pack[++$i];
+        self::$INFO['connection_id'] = unpack('I',$pack[$i]. $pack[++$i] . $pack[++$i] . $pack[++$i]);
         $i++;
 
         //auth_plugin_data_part_1
